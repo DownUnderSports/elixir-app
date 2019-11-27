@@ -1,0 +1,34 @@
+{
+  "name": "down-under-sports",
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "deploy": "yarn bsb:build && yarn webpack:build",
+    "watch": "yarn bsb:watch & (sleep 1 && yarn webpack:watch)",
+    "bsb:clean": "bsb -clean-world",
+    "bsb:build": "bsb -make-world",
+    "bsb:watch": "NINJA_ANSI_FORCED=1 bsb -make-world -w",
+    "webpack:build": "webpack --mode production",
+    "webpack:watch": "webpack --mode development --watch --colors"
+  },
+  "dependencies": {
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "bs-platform": "^5.2.1",
+    "copy-webpack-plugin": "^4.5.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "terser-webpack-plugin": "^1.1.0",
+    "url-loader": "^2.3.0",
+    "webpack": "4.4.0",
+    "webpack-cli": "^3.3.2"
+  }
+}

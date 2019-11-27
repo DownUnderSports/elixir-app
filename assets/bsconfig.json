@@ -1,0 +1,19 @@
+{
+  "name": "down-under-sports",
+  "version": "0.1.0",
+  "sources": {
+    "dir" : "js",
+    "subdirs" : true
+  },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+  ],
+  "warnings": {
+    "error" : "+101"
+  },
+  "refmt": 3
+}

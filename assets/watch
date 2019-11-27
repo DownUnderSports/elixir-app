@@ -1,0 +1,36 @@
+#! /usr/bin/env node
+
+const { exec, spawn } = require('child_process');
+
+const bsbProcess = exec('yarn bsb:watch', (err, stdout, stderr) => {
+  if (err) {
+    // node couldn't execute the command
+    return;
+  }
+
+  // the *entire* stdout and stderr (buffered)
+  console.log(`stdout: ${stdout}`);
+  console.log(`stderr: ${stderr}`);
+});
+
+bsbProcess.stdout.on('data', function(data) {
+  console.log(data);
+});
+
+const webpackProcess = exec('yarn webpack:watch', (err, stdout, stderr) => {
+  if (err) {
+    // node couldn't execute the command
+    return;
+  }
+
+  // the *entire* stdout and stderr (buffered)
+  console.log('stdout: ', stdout);
+  console.log('stderr: ', stderr);
+});
+
+webpackProcess.stdout.on('data', function(data) {
+  console.log(data);
+});
+
+// const webpack = spawn("yarn webpack")
+// const webpack = spawn("node_modules/webpack/bin/webpack.js", ["--mode", "development", "--watch-stdin"], { stdio: 'inherit' })
