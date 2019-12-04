@@ -1,0 +1,38 @@
+#! /usr/bin/env node
+
+const { exec, spawn } = require('child_process');
+const subProcesses = [
+  'yarn bsb:watch',
+  'yarn webpack:watch',
+].map(command => {
+  let subProcess = exec(command, (err, stdout, stderr) => {
+    if (err) {
+      // node couldn't execute the command
+      return;
+    }
+
+    // the *entire* stdout and stderr (buffered)
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
+  });
+
+  subProcess.stdout.on('data', function(data) {
+    console.log(data);
+  });
+
+  return subProcess
+})
+
+// const webpack = spawn("yarn webpack")
+// const webpack = spawn("node_modules/webpack/bin/webpack.js", ["--mode", "development", "--watch-stdin"], { stdio: 'inherit' })
+
+// Using a single function to handle multiple signals
+function handle(signal) {
+  subProcesses.forEach(sub => sub.kill());
+  process.exit()
+}
+
+process.on('SIGINT', handle);
+process.on('SIGTERM', handle);
+process.stdin.on('end', handle);
+process.stdin.resume();

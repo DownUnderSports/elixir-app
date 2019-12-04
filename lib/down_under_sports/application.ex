@@ -11,7 +11,9 @@ defmodule DownUnderSports.Application do
       # Start the Ecto repository
       DownUnderSports.Repo,
       # Start the endpoint when the application starts
-      DownUnderSportsWeb.Endpoint
+      DownUnderSportsWeb.Endpoint,
+      # Start Phoenix Presence when the application starts
+      DownUnderSportsWeb.Presence
       # Starts a worker by calling: DownUnderSports.Worker.start_link(arg)
       # {DownUnderSports.Worker, arg},
     ]

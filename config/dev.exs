@@ -22,7 +22,7 @@ config :down_under_sports, DownUnderSportsWeb.Endpoint,
   check_origin: false,
   watchers: [
     node: [
-      "watch",
+      "watch-build",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]

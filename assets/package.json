@@ -3,8 +3,10 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "deploy": "yarn bsb:build && yarn webpack:build",
-    "watch": "yarn bsb:watch & (sleep 1 && yarn webpack:watch)",
+    "deploy": "yarn webpack:build",
+    "deploy:full": "yarn bsb:build && yarn webpack:build",
+    "watch": "yarn webpack:watch",
+    "watch:full": "yarn bsb:watch & (sleep 1 && yarn webpack:watch)",
     "bsb:clean": "bsb -clean-world",
     "bsb:build": "bsb -make-world",
     "bsb:watch": "NINJA_ANSI_FORCED=1 bsb -make-world -w",
