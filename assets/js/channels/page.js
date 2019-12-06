@@ -1,5 +1,5 @@
 import { Presence } from "phoenix"
-import socket from 'socket'
+import socket from 'socket.bs'
 
 const channel = socket.channel("page:lobby", {})
 const presence = new Presence(channel)

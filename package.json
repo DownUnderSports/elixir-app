@@ -1,0 +1,17 @@
+{
+  "name": "DownUnderSportsElixir",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=11.15.0",
+    "yarn": ">= 1.16.0"
+  },
+  "scripts": {
+    "add-dep": "yarn --cwd assets add",
+    "rm": "yarn --cwd assets remove",
+    "build": "yarn --cwd assets deploy",
+    "install": "yarn --cwd assets install",
+    "start": "mix phx.server"
+  }
+}
