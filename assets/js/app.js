@@ -1,5 +1,6 @@
 // CSS
-import css from "../css/app.css"
+import milligram from "milligram-stylus"
+import css from "css/app"
 
 //
 // Dependencies

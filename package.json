@@ -12,6 +12,9 @@
     "rm": "yarn --cwd assets remove",
     "build": "yarn --cwd assets deploy",
     "install": "yarn --cwd assets install",
-    "start": "mix phx.server"
+    "start": "set -m; mix phx.server"
+  },
+  "dependencies": {
+    "milligram-stylus": "^1.3.0"
   }
 }
