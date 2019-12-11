@@ -1,0 +1,38 @@
+<h1>Show Sport</h1>
+
+<ul>
+
+  <li>
+    <strong>Abbr:</strong>
+    <%= @sport.abbr %>
+  </li>
+
+  <li>
+    <strong>Full:</strong>
+    <%= @sport.full %>
+  </li>
+
+  <li>
+    <strong>Abbr gender:</strong>
+    <%= @sport.abbr_gender %>
+  </li>
+
+  <li>
+    <strong>Full gender:</strong>
+    <%= @sport.full_gender %>
+  </li>
+
+  <li>
+    <strong>Is numbered:</strong>
+    <%= @sport.is_numbered %>
+  </li>
+
+  <li>
+    <strong>Is meta:</strong>
+    <%= @sport.is_meta %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.sport_path(@conn, :edit, @sport) %></span>
+<span><%= link "Back", to: Routes.sport_path(@conn, :index) %></span>

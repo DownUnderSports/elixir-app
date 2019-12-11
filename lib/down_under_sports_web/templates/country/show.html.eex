@@ -1,0 +1,28 @@
+<h1>Show Country</h1>
+
+<ul>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @country.code %>
+  </li>
+
+  <li>
+    <strong>Full:</strong>
+    <%= @country.full %>
+  </li>
+
+  <li>
+    <strong>State Abbr Length:</strong>
+    <%= @country.state_abbr_length %>
+  </li>
+
+  <li>
+    <strong>Address format:</strong>
+    <pre><%= @country.address_format %></pre>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.country_path(@conn, :edit, @country) %></span>
+<span><%= link "Back", to: Routes.country_path(@conn, :index) %></span>

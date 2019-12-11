@@ -1,0 +1,36 @@
+<h1>Listing Sports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Abbr</th>
+      <th>Full</th>
+      <th>Abbr gender</th>
+      <th>Full gender</th>
+      <th>Is numbered</th>
+      <th>Is meta</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for sport <- @sports do %>
+    <tr>
+      <td><%= sport.abbr %></td>
+      <td><%= sport.full %></td>
+      <td><%= sport.abbr_gender %></td>
+      <td><%= sport.full_gender %></td>
+      <td><%= sport.is_numbered %></td>
+      <td><%= sport.is_meta %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.sport_path(@conn, :show, sport) %></span>
+        <span><%= link "Edit", to: Routes.sport_path(@conn, :edit, sport) %></span>
+        <span><%= link "Delete", to: Routes.sport_path(@conn, :delete, sport), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Sport", to: Routes.sport_path(@conn, :new) %></span>

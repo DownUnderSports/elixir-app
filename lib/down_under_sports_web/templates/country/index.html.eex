@@ -1,0 +1,32 @@
+<h1>Listing Countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Full</th>
+      <th>Abbr Len</th>
+      <th>Address format</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for country <- @countries do %>
+    <tr>
+      <td><%= country.code %></td>
+      <td><%= country.full %></td>
+      <td><%= country.state_abbr_length %></td>
+      <td><pre><%= country.address_format %></pre></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.country_path(@conn, :show, country) %></span>
+        <span><%= link "Edit", to: Routes.country_path(@conn, :edit, country) %></span>
+        <span><%= link "Delete", to: Routes.country_path(@conn, :delete, country), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Country", to: Routes.country_path(@conn, :new) %></span>

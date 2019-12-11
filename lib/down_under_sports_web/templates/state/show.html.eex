@@ -1,0 +1,33 @@
+<h1>Show State</h1>
+
+<ul>
+
+  <li>
+    <strong>Abbr:</strong>
+    <%= @state.abbr %>
+  </li>
+
+  <li>
+    <strong>Full:</strong>
+    <%= @state.full %>
+  </li>
+
+  <li>
+    <strong>Country code:</strong>
+    <%= @state.country_code %>
+  </li>
+
+  <li>
+    <strong>Tz offset:</strong>
+    <%= @state.tz_offset %>
+  </li>
+
+  <li>
+    <strong>Observes dst:</strong>
+    <%= @state.observes_dst %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.state_path(@conn, :edit, @state) %></span>
+<span><%= link "Back", to: Routes.state_path(@conn, :index) %></span>
