@@ -12,14 +12,12 @@
 alias DownUnderSports.Repo
 alias DownUnderSports.Metas
 
-# /^%\(\s*(?<qualifier>[a-zA-Z0-9_]+)\s*\?\s*(?<true>.*[^\s])\s*\:\s*(?<false>.*[^\s])\s*\)%/
-
 # SEED COUNTRIES
 {
   {
     "USA", "United States of America", 2,
     """
-    %(care_of ? "%[subject]%%<n>%C/O: %[care_of]%" : (company ? "ATTN: %[subject]%" : subject))%
+    %(care_of ? "%[subject]%%n%C/O: %[care_of]%" : (company ? "ATTN: %[subject]%" : subject))%
     %?company?%
     %[lines]%
     %[locality]%, %[state]% %[zip]%
