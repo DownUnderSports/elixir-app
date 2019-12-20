@@ -1,5 +1,5 @@
 defmodule DownUnderSportsWeb.SportControllerTest do
-  use DownUnderSportsWeb.ConnCase
+  use DownUnderSportsWeb.ConnCase, async: true
 
   alias DownUnderSports.Metas
 

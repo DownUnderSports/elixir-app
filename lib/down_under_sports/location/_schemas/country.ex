@@ -1,4 +1,4 @@
-defmodule DownUnderSports.Metas.Country do
+defmodule DownUnderSports.Location.Country do
   use Ecto.Schema
   import Ecto.Changeset
 

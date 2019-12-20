@@ -1,5 +1,5 @@
 defmodule DownUnderSportsWeb.PageControllerTest do
-  use DownUnderSportsWeb.ConnCase
+  use DownUnderSportsWeb.ConnCase, async: true
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

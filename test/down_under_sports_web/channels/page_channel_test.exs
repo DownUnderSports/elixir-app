@@ -3,8 +3,8 @@ defmodule DownUnderSportsWeb.PageChannelTest do
 
   setup do
     {:ok, _, socket} =
-      socket(DownUnderSportsWeb.UserSocket, "user_id", %{some: :assign})
-      |> subscribe_and_join(DownUnderSportsWeb.PageChannel, "page:lobby")
+      socket(DownUnderSportsWeb.UserSocket, "user_id", %{user_id: 1})
+      |> subscribe_and_join(DownUnderSportsWeb.PageChannel, "page:lobby", %{})
 
     {:ok, socket: socket}
   end

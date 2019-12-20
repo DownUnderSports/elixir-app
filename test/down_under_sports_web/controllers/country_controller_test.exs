@@ -1,14 +1,14 @@
 defmodule DownUnderSportsWeb.CountryControllerTest do
-  use DownUnderSportsWeb.ConnCase
+  use DownUnderSportsWeb.ConnCase, async: true
 
-  alias DownUnderSports.Metas
+  alias DownUnderSports.Location
 
   @create_attrs %{address_format: "some address_format", code: "some code", full: "some full"}
   @update_attrs %{address_format: "some updated address_format", code: "some updated code", full: "some updated full"}
   @invalid_attrs %{address_format: nil, code: nil, full: nil}
 
   def fixture(:country) do
-    {:ok, country} = Metas.create_country(@create_attrs)
+    {:ok, country} = Location.create_country(@create_attrs)
     country
   end
 

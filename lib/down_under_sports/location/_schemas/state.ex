@@ -1,8 +1,8 @@
-defmodule DownUnderSports.Metas.State do
+defmodule DownUnderSports.Location.State do
   use Ecto.Schema
   import Ecto.Changeset
   alias DownUnderSports.Repo
-  alias DownUnderSports.Metas.Country
+  alias DownUnderSports.Location.Country
 
   schema "states" do
     field :abbr, :string
@@ -12,7 +12,7 @@ defmodule DownUnderSports.Metas.State do
     field :tz_offset, :integer
     belongs_to(
       :country,
-      DownUnderSports.Metas.Country,
+      DownUnderSports.Location.Country,
       [
         foreign_key: :country_code,
         references: :code,

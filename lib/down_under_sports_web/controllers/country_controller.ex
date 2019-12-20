@@ -1,21 +1,21 @@
 defmodule DownUnderSportsWeb.CountryController do
   use DownUnderSportsWeb, :controller
 
-  alias DownUnderSports.Metas
-  alias DownUnderSports.Metas.Country
+  alias DownUnderSports.Location
+  alias DownUnderSports.Location.Country
 
   def index(conn, _params) do
-    countries = Metas.list_countries()
+    countries = Location.list_countries()
     render(conn, "index.html", countries: countries)
   end
 
   def new(conn, _params) do
-    changeset = Metas.change_country(%Country{})
+    changeset = Location.change_country(%Country{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"country" => country_params}) do
-    case Metas.create_country(country_params) do
+    case Location.create_country(country_params) do
       {:ok, country} ->
         conn
         |> put_flash(:info, "Country created successfully.")
@@ -27,20 +27,20 @@ defmodule DownUnderSportsWeb.CountryController do
   end
 
   def show(conn, %{"id" => id}) do
-    country = Metas.get_country!(id)
+    country = Location.get_country!(id)
     render(conn, "show.html", country: country)
   end
 
   def edit(conn, %{"id" => id}) do
-    country = Metas.get_country!(id)
-    changeset = Metas.change_country(country)
+    country = Location.get_country!(id)
+    changeset = Location.change_country(country)
     render(conn, "edit.html", country: country, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "country" => country_params}) do
-    country = Metas.get_country!(id)
+    country = Location.get_country!(id)
 
-    case Metas.update_country(country, country_params) do
+    case Location.update_country(country, country_params) do
       {:ok, country} ->
         conn
         |> put_flash(:info, "Country updated successfully.")
@@ -52,8 +52,8 @@ defmodule DownUnderSportsWeb.CountryController do
   end
 
   def delete(conn, %{"id" => id}) do
-    country = Metas.get_country!(id)
-    {:ok, _country} = Metas.delete_country(country)
+    country = Location.get_country!(id)
+    {:ok, _country} = Location.delete_country(country)
 
     conn
     |> put_flash(:info, "Country deleted successfully.")

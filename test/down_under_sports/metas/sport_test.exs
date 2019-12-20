@@ -1,5 +1,5 @@
 defmodule DownUnderSports.Metas.SportTest do
-  use DownUnderSports.DataCase
+  use DownUnderSports.DataCase, async: true
 
   alias DownUnderSports.Metas
 

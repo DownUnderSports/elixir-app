@@ -1,14 +1,14 @@
 defmodule DownUnderSportsWeb.StateControllerTest do
-  use DownUnderSportsWeb.ConnCase
+  use DownUnderSportsWeb.ConnCase, async: true
 
-  alias DownUnderSports.Metas
+  alias DownUnderSports.Location
 
   @create_attrs %{abbr: "KA", country_code: "USA", full: "Kastate", observes_dst: true, tz_offset: -7}
   @update_attrs %{abbr: "vb", country_code: "abd", full: "ok state", observes_dst: false, tz_offset: 0}
   @invalid_attrs %{abbr: nil, country_code: nil, full: nil, observes_dst: nil, tz_offset: nil}
 
   def fixture(:state) do
-    {:ok, state} = Metas.create_state(@create_attrs)
+    {:ok, state} = Location.create_state(@create_attrs)
     state
   end
 
